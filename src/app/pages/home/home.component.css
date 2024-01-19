@@ -1,0 +1,87 @@
+.wrapper {
+  width: 90%;
+  margin: 0 auto;
+}
+
+button {
+  padding: 5px;
+  border-radius: 10px;
+  font-size: 20px;
+}
+
+nav {
+  background: orange;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 5px;
+
+  h1 {
+    font-size: 30px;
+    color: white;
+    font-weight: normal;
+  }
+
+  div button {
+    margin-left: 30px;
+  }
+}
+
+.bottom {
+  display: grid;
+  grid-template-columns: 2fr 5fr;
+  gap: 5%;
+  margin-top: 50px;
+}
+
+.info button {
+  background-color: orange;
+  color: white;
+  border: none;
+}
+
+.info .data {
+  margin: 10px 0;
+  font-size: 20px;
+}
+
+.login-history .top {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: space-between;
+
+  .pagination {
+    display: flex;
+    align-items: center;
+  }
+
+  span {
+    font-size: 30px;
+    margin: 0 5px;
+  }
+}
+
+table {
+  padding: 10px;
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+table td,
+table th {
+  border: 1px solid black;
+  border-collapse: collapse;
+  padding: 5px;
+}
+
+footer {
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-size: 25px;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: orange;
+}

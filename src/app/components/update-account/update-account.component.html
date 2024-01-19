@@ -1,0 +1,49 @@
+<h1 *ngIf="loading" style="z-index: 1000000000">Loading...</h1>
+<div class="wrapper" *ngIf="!loading">
+  <form class="form" [formGroup]="updateForm" (submit)="update()">
+    <h1>Update Account</h1>
+    <div class="form-contain">
+      <label htmlFor="name">Name</label>
+      <input type="text" name="name" id="name" formControlName="name" />
+    </div>
+    <div class="form-contain">
+      <label htmlFor="email">Email</label>
+      <input type="email" name="email" id="email" formControlName="email" />
+    </div>
+    <div class="form-contain">
+      <label htmlFor="dob">Date of Birth</label>
+      <input type="date" name="dob" id="dob" formControlName="dob" />
+    </div>
+    <div class="form-contain">
+      <label htmlFor="password">Password</label>
+      <input
+        type="password"
+        name="password"
+        id="password"
+        formControlName="password"
+      />
+    </div>
+    <div class="form-contain">
+      <label htmlFor="cpassword">Confirm Password</label>
+      <input
+        type="password"
+        name="cPassword"
+        id="cPassword"
+        formControlName="cPassword"
+      />
+    </div>
+    <div class="form-contain">
+      <label htmlFor="oldPassword">Old Password</label>
+      <input
+        type="password"
+        name="oldPassword"
+        id="oldPassword"
+        formControlName="oldPassword"
+      />
+    </div>
+    <div class="btn-container">
+      <button (click)="closeUpdateForm()">close</button>
+      <button type="submit" class="submit">Submit</button>
+    </div>
+  </form>
+</div>

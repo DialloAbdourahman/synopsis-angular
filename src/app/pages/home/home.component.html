@@ -1,0 +1,48 @@
+<h1 *ngIf="loading" style="z-index: 1000000000">Loading...</h1>
+<app-update-account
+  *ngIf="user && updateAccount && !loading"
+  [user]="user"
+  (close)="close($event)"
+  (updateUser)="updateAccountInfo($event)"
+></app-update-account>
+<div *ngIf="!loading && user" class="wrapper">
+  <nav>
+    <h1>SYNOPSIS SOLUTIONS</h1>
+    <div>
+      <button (click)="openUpdate()">update account</button>
+      <button (click)="logout()">Logout</button>
+    </div>
+  </nav>
+  <div class="bottom">
+    <div class="info">
+      <h1>Info</h1>
+      <div class="data">Name: {{ user?.name }}</div>
+      <div class="data">Email: {{ user?.email }}</div>
+      <div class="data">Date of Birth: {{ user?.dob }}</div>
+      <button (click)="openUpdate()">update account</button>
+    </div>
+    <div class="login-history">
+      <div class="top">
+        <h1>Login History</h1>
+        <div class="pagination">
+          <button (click)="prev()">prev</button>
+          <span>{{ historyPage }}</span>
+          <button (click)="next()">next</button>
+        </div>
+      </div>
+      <table>
+        <tr>
+          <td>Id</td>
+          <td>Date/Time</td>
+          <td>Success</td>
+        </tr>
+        <tr *ngFor="let item of history">
+          <td>{{ item.id }}</td>
+          <td>{{ item.time }}</td>
+          <td>{{ item.success ? "True" : "False" }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <footer>Copyright Diallo Abdourahman all rights reserved</footer>
+</div>
